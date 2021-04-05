@@ -70,16 +70,24 @@ public void loseHp()
  
  public void hitPizza()
  {
-        if (isTouching (Pizza.class) )
+        if (isTouching(Pizza.class) )
         {
         removeTouching (Pizza.class);
         addPoints();
         }
  }
  
- public void hitBlock()
+ public void detenctWallCollision()
  {
-      if (isTouching (Block.class) )
+      if (isTouching(Brick.class) )
+      {
+        setLocation(400,560);
+      }
+ }
+ 
+ public void detenctBlockCollision()
+ {
+      if (isTouching(Block.class) )
       {
         setLocation(400,560);
         loseHp();
