@@ -2,8 +2,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Robot extends Actor
 {
-    int Hp = 10;
+    private GreenfootImage robotimage1= new GreenfootImage("man01.png");
+    private GreenfootImage robotimage2= new GreenfootImage("man02.png");
+    
+    int Hp = 3;
     int Points = 0;
+ public void showStatus()
+ {
+    getWorld().showText("LIVES : "+Hp, 70,540);
+    getWorld().showText("Points : "+Points, 70,560);
+ }
+ public void addPoints()
+ {
+    Points = Points + 1;
+ }
+ public void loseHp()
+ {
+    Hp = Hp - 1;
+ }
  public void act() 
  {
         if( Greenfoot.isKeyDown("w") )
@@ -38,7 +54,15 @@ public class Robot extends Actor
         }
         if (isTouching(House.class) )
         {
+            if (Points == 5)
+            {
             setLocation(700,560);
+            Greenfoot.stop();
+            }
+        }
+        if (Hp == 0)
+        {
+            getWorld().addObject( new GameOver(), 300, 300 );
             Greenfoot.stop();
         }
  }
@@ -61,24 +85,12 @@ public class Robot extends Actor
             setLocation( getX() + 5, getY() );
         }
  }
- public void showStatus()
- {
-    getWorld().showText("HP"+Hp,50,30);
-    getWorld().showText("Points"+Points,50,10);
- }
- public void addPoints()
- {
-    Points = Points + 1;
- }
- public void loseHp()
- {
-    Hp = Hp - 1;
- }
  public void hitPizza()
  {
       if (isTouching(Pizza.class) )
       {
          removeTouching(Pizza.class);
+         Greenfoot.playSound("eat.wav");
          addPoints();
       }
  }

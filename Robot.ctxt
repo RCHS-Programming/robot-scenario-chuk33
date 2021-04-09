@@ -1,15 +1,15 @@
 #BlueJ class context
 comment0.target=Robot
 comment1.params=
-comment1.target=void\ act()
+comment1.target=void\ showStatus()
 comment2.params=
-comment2.target=void\ checkKeyPress()
+comment2.target=void\ addPoints()
 comment3.params=
-comment3.target=void\ showStatus()
+comment3.target=void\ loseHp()
 comment4.params=
-comment4.target=void\ addPoints()
+comment4.target=void\ act()
 comment5.params=
-comment5.target=void\ loseHp()
+comment5.target=void\ checkKeyPress()
 comment6.params=
 comment6.target=void\ hitPizza()
 comment7.params=

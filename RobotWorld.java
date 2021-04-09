@@ -5,6 +5,8 @@ public class RobotWorld extends World
     public RobotWorld()
     {    
         super(800, 600, 1);
+        showText("LIVES : ", 70,540);
+        showText("POINTS : ", 70,560);
         addObject( new Robot(), 700, 560 );
         addObject( new ScoreBoard(), 75, 555 );
         addObject( new Pizza(), 320, 400 );
